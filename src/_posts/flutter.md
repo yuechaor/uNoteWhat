@@ -2,11 +2,9 @@
 category: hello
 tags:
   - world
-date: 2019-07-20
-meta: true
+date: 2019-01-21
 title: Hello, world!
 vssue-title: Hello, world!
-
 ---
 
 这是第一篇博文。

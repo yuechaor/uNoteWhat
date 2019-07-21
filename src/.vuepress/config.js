@@ -1,39 +1,50 @@
 module.exports = {
+    //base: '/uNoteWhat/',
     // 网站 Title
     title: 'uNoteWhat',
 
     // 网站描述
     description: 'My Learning Notes ',
 
-    // 网站语言
-    locales: {
-        '/': {
-            // lang: 'zh-CN',
-            // lang: 'en-US',
-        },
-    },
+    // locales: {
+    //     '/zh': {
+    //         lang: 'zh-CN',
+    //     },
+    // },
 
     // 使用的主题
     theme: 'meteorlxy',
 
     // 主题配置
     themeConfig: {
-        // 主题语言，参考下方 [主题语言] 章节
-        lang: {
-            home: 'Home',
-            posts: 'Notes',
-            category: 'category',
-            categories: 'categories',
-            allCategories: 'All',
-            tag: 'tag',
-            tags: 'tags',
-            createdAt: 'createdAt',
-            updatedAt: 'updatedAt',
-            prevPost: 'prevNote',
-            nextPost: 'nextNote',
-            toc: 'Table of Content'
-            // about: 'about me',
+        // 网站语言
+        locales: {
+            '/en': {
+                lang: 'en-US',
+            },
         },
+        // 主题语言，参考下方 [主题语言] 章节
+        // lang: require('vuepress-theme-meteorlxy/lib/langs/en-US'),
+        //lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
+        // lang: {
+
+        //     //locales: 'en-US',
+        //     // 或者
+        //     //lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
+        //     home: 'Home',
+        //     posts: 'Notes',
+        //     category: 'category',
+        //     categories: 'categories',
+        //     allCategories: 'All',
+        //     tag: 'tag',
+        //     tags: 'tags',
+        //     createdAt: 'createdAt',
+        //     updatedAt: 'updatedAt',
+        //     prevPost: 'prevNote',
+        //     nextPost: 'nextNote',
+        //     toc: 'Table of Content'
+        //     // about: 'about me',
+        // },
 
         // 个人信息（没有或不想设置的，删掉对应字段即可）
         personalInfo: {
