@@ -4,13 +4,26 @@ module.exports = {
     title: 'uNoteWhat',
 
     // 网站描述
+    // base: '/uNoteWhat/',
     description: 'My Learning Notes ',
-
+    head: [
+        ['link', { rel: 'icon', href: '/img/avatar.jpeg' }],
+    ],
     // locales: {
     //     '/zh': {
     //         lang: 'zh-CN',
     //     },
     // },
+    // locales: {
+    //     '/': {
+    //         lang: 'en-US',
+    //     },
+    // },
+    locales: {
+        '/': {
+            lang: 'en-US',
+        },
+    },
 
     // 使用的主题
     theme: 'meteorlxy',
@@ -18,33 +31,33 @@ module.exports = {
     // 主题配置
     themeConfig: {
         // 网站语言
-        locales: {
-            '/en': {
-                lang: 'en-US',
-            },
-        },
+        // locales: {
+        //     '/': {
+        //         lang: require('vuepress-theme-meteorlxy/lib/langs/en-US'),
+        //     },
+        // },
         // 主题语言，参考下方 [主题语言] 章节
         // lang: require('vuepress-theme-meteorlxy/lib/langs/en-US'),
         //lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
-        // lang: {
+        lang: {
 
-        //     //locales: 'en-US',
-        //     // 或者
-        //     //lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
-        //     home: 'Home',
-        //     posts: 'Notes',
-        //     category: 'category',
-        //     categories: 'categories',
-        //     allCategories: 'All',
-        //     tag: 'tag',
-        //     tags: 'tags',
-        //     createdAt: 'createdAt',
-        //     updatedAt: 'updatedAt',
-        //     prevPost: 'prevNote',
-        //     nextPost: 'nextNote',
-        //     toc: 'Table of Content'
-        //     // about: 'about me',
-        // },
+            //locales: 'en-US',
+            // 或者
+            //lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
+            home: 'Home',
+            posts: 'Notes',
+            category: 'category',
+            categories: 'categories',
+            allCategories: 'All',
+            tag: 'tag',
+            tags: 'tags',
+            createdAt: 'createdAt',
+            updatedAt: 'updatedAt',
+            prevPost: 'prevNote',
+            nextPost: 'nextNote',
+            toc: 'Table of Content'
+            // about: 'about me',
+        },
 
         // 个人信息（没有或不想设置的，删掉对应字段即可）
         personalInfo: {
@@ -103,13 +116,7 @@ module.exports = {
             { text: 'Home', link: '/', exact: true },
             { text: 'Notes', link: '/posts/', exact: false },
             { text: 'About', link: '/about/', exact: false },
-            {
-                text: 'Languages',
-                items: [
-                    { text: 'Chinese', link: '/language/chinese/' },
-                    { text: 'English', link: '/language/english/' }
-                ],
-            }
+
         ],
 
         // 评论配置，参考下方 [页面评论] 章节
@@ -127,11 +134,11 @@ module.exports = {
         },
 
         // 默认页面（可选，默认全为 true）
-        defaultPages: {
-            // 是否允许主题自动添加 Home 页面 (url: /)
-            home: true,
-            // 是否允许主题自动添加 Posts 页面 (url: /posts/)
-            posts: true,
-        },
+        // defaultPages: {
+        //     // 是否允许主题自动添加 Home 页面 (url: /)
+        //     home: true,
+        //     // 是否允许主题自动添加 Posts 页面 (url: /posts/)
+        //     posts: true,
+        // },
     },
 }
