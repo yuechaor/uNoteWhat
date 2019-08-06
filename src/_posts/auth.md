@@ -1,3 +1,10 @@
+---
+title: Auth
+date: 2019-07-21
+category: Auth
+---
+<!-- more -->
+
 # What is OAuth 2.0?
 Most applications have the concept of a user. To prevent just anyone from saying they are this user, the user has a password. When a user wants to use your application, they send their username and password to the server so it can ensure they are who they say they are.
 
