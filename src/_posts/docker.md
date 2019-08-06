@@ -53,28 +53,30 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
     - docker --help 
 
 ##镜像命令
-    -docker images 列出所有镜像
-      - a 列出全部镜像 **含中间镜像层**
-      - q 只显示全部镜像的id
-      - qa 两者结合 返回ID
-      - --digests 显示摘要信息
-      - --no-trunc 显示完整的id 没有截取显示
-    - docker search xxxx
-      - -s 30 根据星数超过30来筛选
-      - --no-trunc 显示完整的description
-      -  --automated 只列出自动构建类型的镜像
-      - 三个可以结合使用
-    - docker pull xxx
-      - docker pull xxx : 自定义tag名字
-      - 如果不带tag制定特定版本，默认就是latest的版本
-    - docker rmi xxxx ：TAG
-      - 如果没有标识tag版本，默认删除最新的latest
-      - -f 镜像名 
-      - -f 删除多个 镜像1：TAG 镜像2：TAG 镜像名中间加空格
-      - 删除全部 docker rmi -f $(docker images -qa)
+-docker images 列出所有镜像
+    - a 列出全部镜像 **含中间镜像层**
+    - q 只显示全部镜像的id
+    - qa 两者结合 返回ID
+    - --digests 显示摘要信息
+    - --no-trunc 显示完整的id 没有截取显示
+- docker search xxxx
+    - -s 30 根据星数超过30来筛选
+    - --no-trunc 显示完整的description
+    -  --automated 只列出自动构建类型的镜像
+    - 三个可以结合使用
+- docker pull xxx
+    - docker pull xxx : 自定义tag名字
+    - 如果不带tag制定特定版本，默认就是latest的版本
+- docker rmi xxxx ：TAG
+    - 如果没有标识tag版本，默认删除最新的latest
+    - -f 镜像名 
+    - -f 删除多个 镜像1：TAG 镜像2：TAG 镜像名中间加空格
+    - 删除全部 docker rmi -f $(docker images -qa)
 
 ##容器命令
-
+  - 新建一个容器实例并启动该容器
+    - docker run [options] **IMAGE**[COMMAND][ARG...]
+  - 
 
 
 
