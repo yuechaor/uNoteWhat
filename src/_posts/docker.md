@@ -6,6 +6,7 @@ category: Docker
 <!-- more -->
 
 docker 命令
+
 ## 镜像和容器
 
 容器是镜像的一个实例。 容器是用镜像创建的运行实例。它可以被启用，开始，停止，删除，每个容器都是相互隔离的，保证平台的安全。
@@ -33,33 +34,33 @@ image文件生成的容器实例，本身也是一个文件，称为镜像文件
 
 仓库可以用来存放镜像，需要的时候直接拉取。
 
-# docker底层原理
+## docker底层原理
 
-## docker是怎么工作的
+### docker是怎么工作的
 
 docker 是一个CS结构的系统，docker守护进程运行在宿主机上（在执行service docker start或者systemctl start docker之后），然后通过socket连接从客户端访问，守护进程从客户端接收命令并管理主机上的容器，比如接收run命令etc 来运行容器等。
 
 
-## 为什么docker 比 vm 快
+### 为什么docker 比 vm 快
 
 1. docker比虚拟机有更少的抽象层，不需要hypervisor来实现硬件资源虚拟化，运行在docker中的容器实例直接使用的是实际物理机的硬件资源。因此在cpu、内存利用率上 docker在效率上更有优势。
 2. docker利用的是宿主机的内核，而不需要Guest OS。因此，当新建一个容器时，docker不需要和虚拟机一样重新加载一个操作系统内核。进而避免引寻、加载操作系统内核这个比较费时费资源的过程，当新建一个虚拟机时，虚拟机软件需要加载Guest OS，这个新建过程是分钟级别的，而docker由于直接利用宿主机的操作系统，则省略了这个过程，只需要几秒钟的时间。
 
-## docker 安装以及阿里云镜像加速配置
+### docker 安装以及阿里云镜像加速配置
 
     - 根据官网，根据不同系统版本来安装
     - 加速配置可参考阿里云或以下视频
 
     视频12：00处 [https://www.bilibili.com/video/av59639711/?p=9]
 
-# 一般命令
+## 一般命令
 
-## 帮助命令
+### 帮助命令
     - docker version
     - docker info
     - docker --help 
 
-## 镜像命令
+### 镜像命令
 -docker images 列出所有镜像
     - a 列出全部镜像 **含中间镜像层**
     - q 只显示全部镜像的id
@@ -80,7 +81,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
     - -f 删除多个 镜像1：TAG 镜像2：TAG 镜像名中间加空格
     - 删除全部 docker rmi -f $(docker images -qa)
 
-## 容器命令
+### 容器命令
   - 新建一个容器实例并启动该容器
     - docker run [options] **IMAGE**[COMMAND][ARG...]
     - options说明
@@ -171,7 +172,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
     - docker cp ID:要拷贝的路径 目的宿主机路径
     - docker cp ID:/tmp/yum.log /root
 
-# docker 镜像
+## docker 镜像
 
 1. 是什么：
    - 镜像是一种轻量级、可执行的独立软件包，用来**打包软件运行环境和基于运行环境开发的软件**，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。
@@ -201,7 +202,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
      - docker commit -m="updates" -a="ryc" xxxxx newVersion:v_1
    - 
 
-# Docker 容器数据卷
+## Docker 容器数据卷
 
 1. 是什么
    - 目的是将容器运行产生的数据持久化保存下来
@@ -278,7 +279,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
         - 即使删除父类容器dc1了，dc2和dc3中的数据也可以同步
         - **总结：** 容器之间配置信息的传递，数据卷的生命周期一直持续到没有容器使用它为止。直到所有xxx/centos容器死绝为止
 
-# dockerfile 解析
+## dockerfile 解析
 
 1. 思考并回顾一下，用dockerfile写容器卷的主流步骤有哪些？
    1. 手动编写一个dockerfile，按照语义规范来写
@@ -439,7 +440,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
         
       
 
-# Docker常用安装
+## Docker常用安装
 
 1. 总体步骤
    
@@ -450,7 +451,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
   
 4. 安装redis
 
-# 提交镜像到云端（阿里云）
+## 提交镜像到云端（阿里云）
 
 
 1. 本地镜像发布到阿里云流程
