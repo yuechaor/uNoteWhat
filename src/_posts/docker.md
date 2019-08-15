@@ -234,6 +234,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
    - 命令（带权限）增改权限 
    >  docker run -it -v /myDataVolume:/dataVolumeContainer:ro xxxx
    > **ro:** read only 只允许主机单向修改，容器端是ro
+
    > **rw:** read write
    2. dockerFile 添加
    -  根目录下新建mydocker文件夹并进入
@@ -276,7 +277,9 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
           - 删除父类容器dc1，dc2和dc3中的数据也不会受到影响。
         - 即使删除父类容器dc1了，dc2和dc3中的数据也可以同步
         - **总结：** 容器之间配置信息的传递，数据卷的生命周期一直持续到没有容器使用它为止。直到所有xxx/centos容器死绝为止
+---
 # dockerfile 解析
+---
 1. 思考并回顾一下，用dockerfile写容器卷的主流步骤有哪些？
    1. 手动编写一个dockerfile，按照语义规范来写
    2. 有了这个文件后，用了docker build命令执行 生成一个自定义的镜像
@@ -309,7 +312,7 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
         - docker容器可以认为是软件的运行态
       - dockerfile面向开发，docker镜像成为交付标准，docker容器则涉及部署与运维，三者缺一不可，为docker体系的基石。
       - dockerfile定义了进程需要的一切东西。 dockerfile涉及的内容包括 **执行代码或是文件、环境变量、依赖包、运行时环境、动态链接库、操作系统的发行版、服务进程和内核进程等等**
-4. dockerfile体系结构(保留字指令)
+4. dockerfile体系结构(**保留字指令**)
    1. FROM 
       - 基础镜像，当前新镜像是基于哪个镜像的
    2. MAINTAINER
@@ -332,127 +335,132 @@ docker 是一个CS结构的系统，docker守护进程运行在宿主机上（�
    9.  VOLUME
       - 容器数据卷，用于保存和持久化数据
    10. CMD
+      - **指定一个容器启动时要运行的命令** 注意和ENTRYPOINT概念区分
+      - dockerfile中可以有多个CMD指令，但只有最后一个生效，如果在执行docker run时有额外的命令，**dockfile里面的最后一个CMD会被docker run 之后的命令替换**
       - CMD 指令的格式和RUN相似，也是两种格式：
         - shell 格式 CMD <命令>
         - exec 格式 CMD ["可执行文件","参数1","参数2",....]
           - 参数列表格式： CMD ["参数1","参数2",....]，在指定了ENTRYPOINT指令后，用CMD指定具体的参数
    11. ENTRYPOINT
-      - 
+      - **指定一个容器启动时要运行的命令**
+      - 目的和CMD一样，都是在指定容器启动程序及参数。
+      - 不会被覆盖，docker run 之后的参数命令会被传递给ENTRYPOINT,成为追加命令组合。
+      - **区别CMD和ENTRYPOINT案例**
+        - 制作CMD版可以查询ip信息的容器
+        ```
+        FROM centos
+        RUN yum install -y curl
+        CMD ["curl","-s","http://ip.cn"]
+        //再执行docker build
+        docker build -f /mydocker/Dockerfile3 -t myip .
+        ```
+        - 问题
+          - -s 是显示ip地址
+          - -i 是为了显示http头信息
+          - 但是直接在docker run 里面加 -i的话 会覆盖 -s 那个命令
+          - 所以返回的结果会有错误。
+        - 为什么 
+        - 制作ENTRYPOINT版查询ip信息的容器
+        ```
+        FROM centos
+        RUN yum install -y curl
+        ENTRYPOINT ["curl","-s","http://ip.cn"]
+        //再执行docker build
+        docker build -f /mydocker/Dockerfile4 -t myip .
+        ```
+        - 此时在docker run里面加 -i 就会成为追加命令，不会覆盖 -s 命令。
    12. ONBUILD
-      - 
+      - 类似一个触发器
+      - 当构建一个被继承的dockerfile时运行命令，父镜像在被子继承后父镜像的onbuild被触发
+      - 子镜像在构建时，会触发父镜像中的onbuild之后的 命令。
    13. 小总结：
 5. 案例
-6. 小总结
+   * **Base镜像(scratch)**: docker hub中99%的镜像都是通过在base镜像中安装和配置需要的软件构建出来的
+   * **自定义镜像mycentos**
+       1. 编写
+          - hub默认centos镜像是什么情况
+          - 准备编写dockerfile文件
+          - mycentos内容dockerfile
+          ```
+          FROM centos
+          MAINTAINER yuechaor@gmail.com
 
-## list all downloaded images 
+          ENV MYPATH /usr/local
+          WORKDIR $MYPATH
 
-docker image ls
+          RUN yum -y install vim
+          RUN yum -y install net-tools
 
-## list all containers you have or had
+          EXPOSE 80
 
-docker container ls --all
+          CMD /bin/bash
+          ```
+          - 更改了路径落脚点
+          - 安装了vim和net tool
+  
+       2. 构建
+          - docker build -f /mydocker/Dockerfile2 -t mycentos: 1.0
+       3. 运行
+       4. 列出镜像的变更历史 
+          - docker history imageID
+    * **自定义镜像tomcat**
+      1. mkdir -p /xxx/mydockerfile/tomcat9
+      2. 在上述目录下touch c.txt 目的是为了演示copy的命令。
+      3. 将jdk和tomcat安装的压缩包拷贝到该目录，目的是为了演示add命令
+      4. 在该目录下新建Dockerfile文件
+      ```
+      FROM  centos
+      MAINTAINER ryc<yuechao@gmail.com>
+      #从host 拷贝到 容器/usr/local/
+      COPY c.txt /usr/local/cincontainer.txt
+      #添加java和tomcat压缩包到容器
+      ADD jdk-sxxxx.tar.gz /usr/local/
+      ADD tomcat-sxxxx.tar.gz /usr/local/
+      RUN yum -y install vim
+      WORKDIR $MYPATH
+      ENV MYPATH /usr/local
 
-# Recap and Cheat sheet
+      #配置环境变量
+      ENV JAVA_HOME /usr/local/jdk1.8.0.171
+       ....
+      #容器运行时监听的端口
+      EXPOSE 8080
+      
+      CMD /usr/local/apache-tomcat/bin/startup.sh && tail -F /usr/loal/apache-tomcat/bin/logs/catalina.out
+      ```
+      1. 构建
+       - **docker build . dot 怎么理解**
+       - 当我们使用docker build来构建镜像时，这个构建过程是在daemon中进行的，而不是本地client，所以这个dot就是为了将构建所需的当前目录下的文件 以上下文build context的形式传送到daemon中，用于构建镜像。
+      2. run
+       - > docker run -d -p 9999:8080 --name myTomcat9 -v /xxx/mydockerfile/tomcat9/test: /usr/local/apache-tomcat-9.0.8/webapps/test -v /xxx/mydockerfile/tomcat9/tomcat9logs: /usr/local/apache-tomcat-9.0.8/webapps/logs xxxtomcat9
+      3. 验证
+      4. 结合前述的容器卷将测试的web服务test发布
+        - 因此前创建了容器卷，所以我们可以直接在host中对应的test文件夹中部署apps或者查看日志，**这样容器中对应的文件夹目录也会同步**
+        
+      
+---
+# Docker常用安装
+---
+1. 总体步骤
+   
+2. 安装tomcat
+3. 安装mysql
+   1. docker search mysql
+   2. docker pull mysql：5.6
+  
+4. 安装redis
+---
+# 提交镜像到云端（阿里云）
+---
 
-## List Docker CLI commands
-docker
-docker container --help
-
-## Display Docker version and info
-docker --version
-docker version
-docker info
-
-## Execute Docker image
-docker run hello-world
-
-## List Docker images
-docker image ls
-
-## List Docker containers (running, all, all in quiet mode)
-docker container ls
-docker container ls --all
-docker container ls -aq
-
-
-## 启动交互式的容器，进而可以查看容器的文件及环境配置等。
-
-docker run -i -t IMAGE /bin/bash
-
-    -i interactive 默认是false
-    - t tty 开启tty的终端 默认是false
-
-## 停用一个交互式容器
-
-$exit
- 
-## 如何查看容器
-docker ps -[a] -[l]
-
-docker ps 查看运行中的容器。
-
--a 查看所有容器
-
-
-docker inspect 容器名字
-
-## 更改容器名字
-
-docker run --name=自定义名字 -i -t IMAGE /bin/bash 
-
-## 重新启动停止的容器
-
-docker start [-i] 容器名字
-
--i 表示可以以交互的方式启动。
-
-## 删除停止的容器
-
-docker rm 容器名字
+1. 本地镜像发布到阿里云流程
+   1. 镜像生成方法：docker commit -a yuechao -m "new image" imageID  newImageName:tag
+2. 将本地镜像推送到阿里云：阿里云开发者平台有相关步骤 如何设置和执行命令
+   1. 本地镜像素材原型
+   2. 阿里云开发者平台
+   3. 创建仓库镜像
+   4. 将镜像推送到registry
+   5. 公有云可以查询到
+3. 之后就可以将阿里云上的镜像下载到本地使用了。
 
 
-
-# 守护式容器 daemon
-
--能够长期运行
--没有交互式会话
--适合运行应用程序和服务
-
-## 如何以守护形式运行容器
-$docker run -i -t IMAGE /bin/bash
-然后按Ctrl+P Ctrl+Q
-使容器在后台运行
-
-## 如何再次进去后台运行中的容器
-
-$docker attach ID/NAME
-
-## 如何直接启动守护式容器 daemon
-
-$docker run -d 镜像名
-
-## 查看容器日志
-
-$docker logs [-f] [-t] [-tail]
--f followed = true;
--t timestamp = true;
--tail = 'all';
-
-## 查看容器的进程
-
-$docker top 容器名字
-
-## 如何在运行的容器中启动新的进程
-
-$docker exec [-d][-i][-t] 容器名字 [COMMAND][ARG]
-
-例如在容器中重新开启一个bash
-docker exec -i -t container1 /bin/bash
-
-## 停止运行中的守护式容器
-
-docker stop
-
-docker kill
-
-区别在于：kill 直接快速停止容器， stop还会发送一个信号，等待容器停止。
