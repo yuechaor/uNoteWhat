@@ -74,7 +74,7 @@ module.exports = {
             location: 'Melbourne, AU',
 
             // 组织
-            //organization: 'Xi\'an Jiao Tong University',
+            //organization: 'Dk University',
 
             // 头像
             // 设置为外部链接
