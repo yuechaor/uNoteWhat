@@ -14,7 +14,7 @@ aside: false
 
 # About me
 ## For the horde!!! 
-## 一个永远在爬坑中的人～～～
+## Time is money, my friend!
 
 
 

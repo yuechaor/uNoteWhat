@@ -4,7 +4,7 @@ module.exports = {
     title: 'uNoteWhat',
 
     // 网站描述
-    // base: '/uNoteWhat/',
+    base: '/uNoteWhat/',
     description: 'My Learning Notes, Flutter坑，Dart坑，坑，issue，errors',
     head: [
         ['link', { rel: 'icon', href: '/img/avatar.jpeg' }],
