@@ -1,9 +1,9 @@
 <template>
   <TransitionFadeSlide>
     <div
+      :key="showAside"
       class="container clearfix"
       :class="containerClass"
-      :key="showAside"
     >
       <main class="main">
         <TransitionFadeSlide>
@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import TransitionFadeSlide from './TransitionFadeSlide.vue'
-import PostNavCard from './PostNavCard.vue'
-import InfoCard from './InfoCard.vue'
+import TransitionFadeSlide from '@theme/components/TransitionFadeSlide.vue'
+import PostNavCard from '@theme/components/PostNavCard.vue'
+import InfoCard from '@theme/components/InfoCard.vue'
 
 export default {
   name: 'TheMain',
@@ -55,7 +55,7 @@ export default {
     },
 
     showAside () {
-      if (this.$page.frontmatter.hasOwnProperty('aside')) {
+      if ('aside' in this.$page.frontmatter) {
         return this.$page.frontmatter.aside
       }
       return true

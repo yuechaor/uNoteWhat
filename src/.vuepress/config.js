@@ -78,7 +78,7 @@ module.exports = {
 
             // 头像
             // 设置为外部链接
-            avatar: '/img/avatar.jpeg',
+            avatar: '/uNoteWhat/img/avatar.jpeg',
             // 或者放置在 .vuepress/public 文件夹，例如 .vuepress/public/img/avatar.jpg
             // avatar: '/img/avatar.jpg',
 

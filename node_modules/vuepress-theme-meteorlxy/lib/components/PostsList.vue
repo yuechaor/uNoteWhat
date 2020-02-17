@@ -3,16 +3,16 @@
     <TransitionFadeSlide>
       <div
         v-if="listPosts.length === 0"
-        class="no-posts"
         key="no-posts"
+        class="no-posts"
       >
         {{ $themeConfig.lang.noRelatedPosts }}
       </div>
 
       <div
         v-else
-        class="posts-items"
         :key="page"
+        class="posts-items"
       >
         <TransitionFadeSlide
           tag="div"
@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import TransitionFadeSlide from './TransitionFadeSlide.vue'
-import PostsListItem from './PostsListItem.vue'
-import Pagination from './Pagination.vue'
+import TransitionFadeSlide from '@theme/components/TransitionFadeSlide.vue'
+import PostsListItem from '@theme/components/PostsListItem.vue'
+import Pagination from '@theme/components/Pagination.vue'
 
 export default {
   name: 'PostsList',

@@ -16,11 +16,13 @@
         {{ nickname }}
       </section>
 
+      <!-- eslint-disable vue/no-v-html -->
       <section
         v-if="description"
         class="info-desc"
         v-html="description"
       />
+      <!-- eslint-enable vue/no-v-html -->
 
       <section class="info-contact">
         <section v-if="location">
@@ -80,9 +82,9 @@
 </template>
 
 <script>
-import IconInfo from './IconInfo.vue'
-import IconSns from './IconSns.vue'
 import GeoPattern from 'geopattern'
+import IconInfo from '@theme/components/IconInfo.vue'
+import IconSns from '@theme/components/IconSns.vue'
 
 export default {
   name: 'InfoCard',
@@ -125,10 +127,38 @@ export default {
       return this.info.sns || null
     },
 
+    headerBackgroundConfig () {
+      return this.$themeConfig.infoCard.headerBackground || {}
+    },
+
+    headerBackgroundImg () {
+      return this.headerBackgroundConfig.url || null
+    },
+
     headerStyle () {
-      return {
-        'background-image': !this.$ssrContext ? GeoPattern.generate(this.nickname, { color: '#eee' }).toDataUrl() : null,
+      if (this.headerBackgroundImg) {
+        return {
+          'background-size': 'cover',
+          'background-repeat': 'no-repeat',
+          'background-position': 'center',
+          'background-attachment': 'scroll',
+          'background-image': `url(${this.headerBackgroundImg})`,
+        }
       }
+
+      if (!this.$ssrContext && this.headerBackgroundConfig.useGeo !== false) {
+        return {
+          'background-image': this.gpImg(),
+        }
+      }
+
+      return {}
+    },
+  },
+
+  methods: {
+    gpImg () {
+      return GeoPattern.generate(this.nickname, { color: '#eee' }).toDataUrl()
     },
   },
 }
@@ -148,6 +178,8 @@ $avatarHeight = 120px
   .info-card-header
     height $headerBgHeight
     margin-bottom $avatarHeight * 0.5
+    border-top-left-radius 5px
+    border-top-right-radius 5px
     .info-avatar
       display block
       width $avatarHeight
