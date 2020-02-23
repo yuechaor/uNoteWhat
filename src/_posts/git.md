@@ -154,4 +154,19 @@ note： 这些更改是基于local directory的， 不是远程协作，远程�
 1. git rebase -i [需要合并的commit的哈希值]
 2. 添加pick [需要合并的commit的哈希值]
 3. 把需要合并的commit 放在这个pick的后面，并使用squash，表示和前一个commit融合。
-4. 为合并后的commit 添加新的message，同时可以选择保留原来的message
+4. 为合并后的commit 添加新的message，同时可以选择保留原来的message.
+
+# 如何比较暂存区和HEAD branch所含文件的差别
+
+git diff --cached
+
+
+# 如何比较工作区和暂存区所含文件的差别
+
+git diff
+
+默认情况下比较的是工作区和暂存区的文件差别
+
+git diff -- fileName
+
+只查看一个文件的变更内容。
