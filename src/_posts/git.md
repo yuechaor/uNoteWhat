@@ -1,3 +1,10 @@
+---
+title: Git Notes
+date: 2020-02-10
+category: Git
+---
+<!-- more -->
+
 # configuration
 
 ## adding accounts
