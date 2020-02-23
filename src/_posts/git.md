@@ -155,7 +155,11 @@ note： 这些更改是基于local directory的， 不是远程协作，远程�
 2. 添加pick [需要合并的commit的哈希值]
 3. 把需要合并的commit 放在这个pick的后面，并使用squash，表示和前一个commit融合。
 <<<<<<< HEAD
+<<<<<<< HEAD
 4. 为合并后的commit 添加新的message，同时可以选择保留原来的message
 =======
 4. 为合并后的commit 添加新的message，同时可以选择保留原来的message...
 >>>>>>> ca91c8e... merge testing4
+=======
+4. 为合并后的commit 添加新的message，同时可以选择保留原来的message..
+>>>>>>> 882016d... merge testing3
