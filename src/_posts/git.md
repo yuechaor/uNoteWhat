@@ -176,13 +176,83 @@ git diff -- fileName
 
 有时候有更好的方案，需要恢复到HEAD指向的文件快照的样子，所有需要放弃所有暂存区的内容。
 
-git reset HEAD 
+> git reset HEAD 
 
 恢复部分文件可以采用
 
+> git reset HEAD -- fileName
 
 # 如何让工作区恢复成跟暂存区一样？
 
 有时候需要把文件快照从暂存区拷贝到工作区，可以用以下命令：
 
-git checkout -- fileName [或文件路径]
+> git checkout -- fileName [或文件路径]
+
+# 怎样取消暂存区部分文件的更改？
+
+多个文件以及add到了暂存区，需要撤销其中一个文件，可以用以下命令：
+
+> git reset HEAD -- fileName1 fileName2 
+
+
+
+# 如何消除最近的几次的commit提交
+
+想消除最近的两次commit，彻底不想要了，让暂存区和工作区都恢复到一个以前特定commit点，可以用：
+
+> git reset --hard CommitID
+
+
+# 如何比较两个提交的指定文件的不同？
+
+如何看两个不同分支或者commit之间的不同，可以用：
+
+比较temp和master**两个分支**的所有差异
+>  git diff temp master
+> 
+比较temp和master两个分支的**指定文件**差异
+
+>  git diff temp master -- FileName
+
+以上命令也可以使用commit的ID，代替分支名
+
+
+# 如何正确删除文件
+
+> git rm fileName
+
+
+# 工作中遇到紧急加塞的情况，怎么办？
+
+正在工作区做修改，突然遇到新的情况，如之前的commit中有bug需要修改，手头工作可以先放到stash中：
+
+> git stash 
+
+然后可以做紧急任务的修改工作，完事提交commit之后，可以再把stash中的提取出来，
+
+> git stash apply (保留内容)
+
+> git stash pop  (pop之后stash中内容会删除)
+
+
+
+# 如何指定不需要git管理的文件
+
+需要编辑.gitignore文件
+github官网上有针对不同编程语言所需要的.gitignore的编写。
+
+
+
+# 如何将git仓库备份到本地
+
+新建一个backup的文件夹，然后在文件夹路径下，使用命令：
+
+## 哑协议 
+
+ > git clone --bare /Users/RYC/Desktop/vuepressBlog/my-blog/.git ya.git
+
+--bare: 不带工作区的裸仓库
+
+## 智能协议
+
+> git clone --bare file:///Users/RYC/Desktop/vuepressBlog/my-blog/.git zhineng.git
