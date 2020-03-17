@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nodejs | uNoteWhat</title>
+    <meta name="description" content="My Learning Notes, Flutter坑，Dart坑，坑，issue，errors">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/uNoteWhat/img/avatar.jpeg">
+    <link rel="preload" href="/uNoteWhat/assets/css/0.styles.8334e0c5.css" as="style"><link rel="preload" href="/uNoteWhat/assets/js/app.58bd65f3.js" as="script"><link rel="preload" href="/uNoteWhat/assets/js/6.9f100392.js" as="script"><link rel="preload" href="/uNoteWhat/assets/js/23.61db549f.js" as="script"><link rel="prefetch" href="/uNoteWhat/assets/js/1.62bc2bb2.js"><link rel="prefetch" href="/uNoteWhat/assets/js/10.fbe89c91.js"><link rel="prefetch" href="/uNoteWhat/assets/js/11.eb4ab1a8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/12.42ba0867.js"><link rel="prefetch" href="/uNoteWhat/assets/js/13.cc34cef8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/14.b9d181ff.js"><link rel="prefetch" href="/uNoteWhat/assets/js/15.92f21756.js"><link rel="prefetch" href="/uNoteWhat/assets/js/16.5ddf09c8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/17.a4ab07f8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/18.76d03fcd.js"><link rel="prefetch" href="/uNoteWhat/assets/js/19.b9e0498d.js"><link rel="prefetch" href="/uNoteWhat/assets/js/20.86889de2.js"><link rel="prefetch" href="/uNoteWhat/assets/js/21.ff9c30ad.js"><link rel="prefetch" href="/uNoteWhat/assets/js/22.f6650327.js"><link rel="prefetch" href="/uNoteWhat/assets/js/24.7fdb55c5.js"><link rel="prefetch" href="/uNoteWhat/assets/js/25.e3c7b64b.js"><link rel="prefetch" href="/uNoteWhat/assets/js/26.134168ed.js"><link rel="prefetch" href="/uNoteWhat/assets/js/27.040487f4.js"><link rel="prefetch" href="/uNoteWhat/assets/js/28.e76763ba.js"><link rel="prefetch" href="/uNoteWhat/assets/js/3.6bdddad3.js"><link rel="prefetch" href="/uNoteWhat/assets/js/4.10d92757.js"><link rel="prefetch" href="/uNoteWhat/assets/js/5.6d1e94d9.js"><link rel="prefetch" href="/uNoteWhat/assets/js/7.38452614.js"><link rel="prefetch" href="/uNoteWhat/assets/js/8.5c116278.js"><link rel="prefetch" href="/uNoteWhat/assets/js/9.a6a30b66.js">
+    <link rel="stylesheet" href="/uNoteWhat/assets/css/0.styles.8334e0c5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/uNoteWhat/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          uNoteWhat
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/uNoteWhat/" class="navbar-link" data-v-e4145d0a>
+            Home
+          </a><a href="/uNoteWhat/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Notes
+          </a><a href="/uNoteWhat/about/" class="navbar-link" data-v-e4145d0a>
+            About
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Nodejs
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      createdAt : 2019-08-21
+    </span> <span class="update-date" data-v-4e23451f>
+      updatedAt : 2019-08-26
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/uNoteWhat/posts/2019/08/15/docker-advance.html" class="post-link" data-v-4e23451f>
+      prevNote : Docker高级笔记
+    </a> <a href="/uNoteWhat/posts/2019/08/26/npm.html" class="post-link" data-v-4e23451f>
+      nextNote : NPM
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h2 id="什么是commonjs"><a href="#什么是commonjs" class="header-anchor">#</a> 什么是CommonJs</h2> <p>JavaScript 是一个强大面向对象语言，它有很多快速高效的解释器。然而， JavaScript 标准定义的 API 是为了构建基于浏览器的应用程序。并没有制定一个用于更广泛的应用程序 的标准库。<strong>commonjs规范的提出主要是为了弥补js标准的缺陷，终极目标是建立一个类似于java、python一样的标准库</strong>,而不只是停留在小脚本程序 的阶段。用 CommonJS API 编写出的应用，不仅可以利用 JavaScript 开发客户端应用，而且还可以编写以下应用 。</p> <ul><li>服务器端 JavaScript 应用程序。(nodejs)</li> <li>命令行工具。</li> <li>桌面图形界面应用程序。
+<strong>CommonJS 就是模块化的标准，nodejs 就是 CommonJS(模块化)的实现。</strong></li></ul> <h2 id="nodejs中的模块化"><a href="#nodejs中的模块化" class="header-anchor">#</a> nodejs中的模块化</h2> <p>Node 应用由模块组成，采用CommonJS模块规范</p> <ol><li><p>在Node中，模块分为两类
+Node提供的模块，<strong>为核心模块</strong>
+用户编写的模块，<strong>为文件模块</strong></p> <ul><li>核心模块部分在node源代码的编译过程中，编译进了二进制执行文件。在node进行启动时，部分核心模块就被直接加载进内存中，所以这部分核心模块引入时，<strong>文件定位和编译执行这两个步骤可以省略掉</strong>，<strong>并且在路径分析中优先判断</strong>，<strong>所以它的加载速度是最快的</strong>。
+如：HTTP模块，URL模块，Fs模块都是nodejs内置的核心模块，可以直接引入使用。</li> <li>文件模块则是在运动时动态加载，需要完整的路径分析，文件定位、编译执行过程，速度相比核心模块稍微慢一些，但是用的非常多。这些模块需要我们自己定义。</li></ul></li> <li><p>我们可以把公共的功能抽离成为一个单独的 js 文件作为一个模块，默认情况下面这 个模块里面的方法或者属性，外面是没法访问的。</p> <ul><li>如果要让外部可以访问模块里面的方法或 者属性，就必须在模块里面通过 exports 或者 module.exports 暴露属性或者方法。</li> <li>在需要使用这些模块的文件中，通过 require 的方式引入这个模块。这个时候就可以 使用模块里面暴露的属性和方法。</li></ul></li></ol> <h2 id="fs模块"><a href="#fs模块" class="header-anchor">#</a> fs模块</h2> <ul><li><p>fs.stat 检测是文件还是目录</p></li> <li><p>fs.mkdir 创建目录</p></li> <li><p>fs.writeFile 创建并写入文件</p></li> <li><p>fs.appendFile 追加写入文件</p></li> <li><p>fs.readFile 读取文件</p></li> <li><p>fs.readdir 读取目录</p></li> <li><p>fs.rename 重命名 还可以剪切</p></li> <li><p>fs.rmdir 删除目录</p></li> <li><p>fs.unlink 删除文件</p></li> <li><p>fs.createReadStream 从文件流中读取数据</p></li> <li><p>fs.createWriteStream 写入文件</p></li> <li><p>pipe 管道</p></li> <li><p>找出html目录下所有目录并打印出来</p></li> <li><p>js函数-自执行函数</p> <h3 id="代码部分"><a href="#代码部分" class="header-anchor">#</a> 代码部分</h3></li></ul> <div class="language-javaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// fs.stat 检测是文件还是目录</span>
+fs<span class="token punctuation">.</span><span class="token function">stat</span><span class="token punctuation">(</span><span class="token string">'hello.js'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stats<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">文件: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>stats<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//此处要使用back ticks</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">文件: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>stats<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//此处要使用back ticks</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// fs.mkdir 创建目录</span>
+fs<span class="token punctuation">.</span><span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token string">'logs'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'目录创建成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//fs.writeFile 创建并写入文件</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">'logs/test.log'</span><span class="token punctuation">,</span> <span class="token string">'fuck u !'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'写入成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// fs.appendFile 追加写入文件</span>
+fs<span class="token punctuation">.</span><span class="token function">appendFile</span><span class="token punctuation">(</span><span class="token string">'logs/test.log'</span><span class="token punctuation">,</span> <span class="token string">'fuck u again!'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'追加写入成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//fs.readFile 读取文件</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'logs/test.log'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">//options encoding = utf8</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//fs.readdir 读取目录</span>
+fs<span class="token punctuation">.</span><span class="token function">readdir</span><span class="token punctuation">(</span><span class="token string">'logs'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> file</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">//options encoding = utf8</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//fs.rename 重命名 还可以剪切</span>
+<span class="token comment">//</span>
+<span class="token comment">//fs.rmdir 删除目录 只能删除目录</span>
+<span class="token comment">//fs.unlink 删除文件</span>
+fs<span class="token punctuation">.</span><span class="token function">unlink</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">logs/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">成功的删除了文件: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//fs.createReadStream 从文件流中读取数据</span>
+<span class="token keyword">var</span> fileReadStream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span><span class="token string">'data.json'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+fileReadStream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">chunk</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token operator">++</span>count<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 接收到:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>chunk<span class="token punctuation">.</span>length<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   str <span class="token operator">+=</span> chunk
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+fileReadStream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'--- 结束 ---'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+fileReadStream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//fs.createWriteStream 写入文件</span>
+<span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">'我是从数据库获取的数据，我要保存起来'</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建一个可以写入的流，写入到文件 output.txt 中</span>
+<span class="token keyword">var</span> writerStream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createWriteStream</span><span class="token punctuation">(</span><span class="token string">'output.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 使用 utf8 编码写入数据</span>
+writerStream<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'UTF8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 标记文件末尾</span>
+writerStream<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 处理流事件 --&gt; finish 事件</span>
+writerStream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'finish'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/*finish - 所有数据已被写入到底层系统时触发。*/</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;写入完 成。&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+writerStream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;程序执 行完毕&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//pipe 管道</span>
+<span class="token comment">// 创建一个可读流</span>
+<span class="token keyword">var</span> readerStream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span><span class="token string">'input.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 创建一个可写流</span>
+<span class="token keyword">var</span> writerStream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createWriteStream</span><span class="token punctuation">(</span><span class="token string">'output.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+readerStream<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>writerStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'程序执行完毕'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-javaScript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 找出html目录下所有目录并打印出来</span>
+<span class="token keyword">var</span> filesArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">readdir</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> files</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+       <span class="token comment">//判断数组files 里面的数据是目录还是文件</span>
+       <span class="token comment">//错误写法是用for loop + fs.stat 来进行判断，因为fs.stat是个异步函数</span>
+       <span class="token comment">//错误写法</span>
+       <span class="token comment">// for (let index = 0; index &lt; files.length; index++) {</span>
+       <span class="token comment">//     fs.stat(files[index], (err, stats) =&gt; {</span>
+       <span class="token comment">//         if (err) {</span>
+       <span class="token comment">//             console.log(err);</span>
+       <span class="token comment">//         }</span>
+       <span class="token comment">//         console.log(stats.isDirectory);</span>
+       <span class="token comment">// })</span>
+       <span class="token comment">// }</span>
+       <span class="token comment">//正确写法</span>
+       <span class="token comment">//需要用匿名函数来先获取html下所有文件和目录，然后存放到另外一个数组中，然后再做判断</span>
+       <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">getFile</span><span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> files<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+               console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'目录：'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>filesArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token keyword">return</span> <span class="token boolean">false</span>
+           <span class="token punctuation">}</span>
+           fs<span class="token punctuation">.</span><span class="token function">stat</span><span class="token punctuation">(</span><span class="token string">'html/'</span> <span class="token operator">+</span> files<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+               <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stats<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                   <span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                       <span class="token comment">// console.log('1');</span>
+                       filesArray<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                   <span class="token punctuation">}</span>
+                   <span class="token function">getFile</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token punctuation">}</span>
+           <span class="token punctuation">}</span><span class="token punctuation">)</span>
+       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//自执行函数，即定义和调用合为一体。</span>
+       <span class="token comment">// 常见格式</span>
+       <span class="token comment">// (function() { /* code */ })();</span>
+       <span class="token comment">//第一个传递进去的值是0</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      createdAt : 2019-08-21
+    </span> <span class="update-date" data-v-4e23451f>
+      updatedAt : 2019-08-26
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/uNoteWhat/posts/2019/08/15/docker-advance.html" class="post-link" data-v-4e23451f>
+      prevNote : Docker高级笔记
+    </a> <a href="/uNoteWhat/posts/2019/08/26/npm.html" class="post-link" data-v-4e23451f>
+      nextNote : NPM
+    </a></section></section> <!----></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/uNoteWhat/img/avatar.jpeg" alt="PrintF" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      PrintF
+    </section> <section class="info-desc" data-v-9d847660>Two Hours a day, Keeps Foolish Away</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="Melbourne, AU" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Melbourne, AU</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          Melbourne, AU
+        </span></span></section> <!----> <section data-v-9d847660><a href="mailto:yuechaor@gmail.com" title="yuechaor@gmail.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>yuechaor@gmail.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          yuechaor@gmail.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/yuechaor" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: yuechaor" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: yuechaor</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>Table of Content</span> <div class="post-nav-toc"><ul><li><a href="/uNoteWhat/posts/2019/08/21/nodejs.html#什么是commonjs">什么是CommonJs</a></li><li><a href="/uNoteWhat/posts/2019/08/21/nodejs.html#nodejs中的模块化">nodejs中的模块化</a></li><li><a href="/uNoteWhat/posts/2019/08/21/nodejs.html#fs模块">fs模块</a><ul><li><a href="/uNoteWhat/posts/2019/08/21/nodejs.html#代码部分">代码部分</a></li></ul></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-17465a0e><p class="footer-sns-links" data-v-17465a0e><a href="https://github.com/yuechaor" target="_blank" class="sns-link" data-v-17465a0e><span title="GitHub: yuechaor" class="sns-icon" data-v-17465a0e data-v-17465a0e><svg class="icon" style="font-size:25px;" data-v-17465a0e data-v-17465a0e><title data-v-17465a0e data-v-17465a0e>GitHub: yuechaor</title><use xlink:href="#icon-github" data-v-17465a0e data-v-17465a0e></use></svg></span></a></p> <p class="footer-text" data-v-17465a0e><span data-v-17465a0e>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-17465a0e>
+      VuePress
+    </a></p> <!----></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/uNoteWhat/assets/js/app.58bd65f3.js" defer></script><script src="/uNoteWhat/assets/js/6.9f100392.js" defer></script><script src="/uNoteWhat/assets/js/23.61db549f.js" defer></script>
+  </body>
+</html>

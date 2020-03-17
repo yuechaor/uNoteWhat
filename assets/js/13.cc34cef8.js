@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{202:function(t,s,n){"use strict";n.r(s);var a={name:"CustomLayout"},e=n(1),i=Object(e.a)(a,(function(){var t=this.$createElement,s=this._self._c||t;return s("div",{staticClass:"custom-layout"},[s("div",{staticClass:"main-div"},[s("Content",{staticClass:"content"})],1)])}),[],!1,null,null,null);s.default=i.exports}}]);

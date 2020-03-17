@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Auth | uNoteWhat</title>
+    <meta name="description" content="My Learning Notes, Flutter坑，Dart坑，坑，issue，errors">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/uNoteWhat/img/avatar.jpeg">
+    <link rel="preload" href="/uNoteWhat/assets/css/0.styles.8334e0c5.css" as="style"><link rel="preload" href="/uNoteWhat/assets/js/app.58bd65f3.js" as="script"><link rel="preload" href="/uNoteWhat/assets/js/6.9f100392.js" as="script"><link rel="preload" href="/uNoteWhat/assets/js/15.92f21756.js" as="script"><link rel="prefetch" href="/uNoteWhat/assets/js/1.62bc2bb2.js"><link rel="prefetch" href="/uNoteWhat/assets/js/10.fbe89c91.js"><link rel="prefetch" href="/uNoteWhat/assets/js/11.eb4ab1a8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/12.42ba0867.js"><link rel="prefetch" href="/uNoteWhat/assets/js/13.cc34cef8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/14.b9d181ff.js"><link rel="prefetch" href="/uNoteWhat/assets/js/16.5ddf09c8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/17.a4ab07f8.js"><link rel="prefetch" href="/uNoteWhat/assets/js/18.76d03fcd.js"><link rel="prefetch" href="/uNoteWhat/assets/js/19.b9e0498d.js"><link rel="prefetch" href="/uNoteWhat/assets/js/20.86889de2.js"><link rel="prefetch" href="/uNoteWhat/assets/js/21.ff9c30ad.js"><link rel="prefetch" href="/uNoteWhat/assets/js/22.f6650327.js"><link rel="prefetch" href="/uNoteWhat/assets/js/23.61db549f.js"><link rel="prefetch" href="/uNoteWhat/assets/js/24.7fdb55c5.js"><link rel="prefetch" href="/uNoteWhat/assets/js/25.e3c7b64b.js"><link rel="prefetch" href="/uNoteWhat/assets/js/26.134168ed.js"><link rel="prefetch" href="/uNoteWhat/assets/js/27.040487f4.js"><link rel="prefetch" href="/uNoteWhat/assets/js/28.e76763ba.js"><link rel="prefetch" href="/uNoteWhat/assets/js/3.6bdddad3.js"><link rel="prefetch" href="/uNoteWhat/assets/js/4.10d92757.js"><link rel="prefetch" href="/uNoteWhat/assets/js/5.6d1e94d9.js"><link rel="prefetch" href="/uNoteWhat/assets/js/7.38452614.js"><link rel="prefetch" href="/uNoteWhat/assets/js/8.5c116278.js"><link rel="prefetch" href="/uNoteWhat/assets/js/9.a6a30b66.js">
+    <link rel="stylesheet" href="/uNoteWhat/assets/css/0.styles.8334e0c5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/uNoteWhat/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          uNoteWhat
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/uNoteWhat/" class="navbar-link" data-v-e4145d0a>
+            Home
+          </a><a href="/uNoteWhat/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Notes
+          </a><a href="/uNoteWhat/about/" class="navbar-link" data-v-e4145d0a>
+            About
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Auth
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      createdAt : 2019-07-21
+    </span> <span class="update-date" data-v-4e23451f>
+      updatedAt : 2019-08-06
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/uNoteWhat/posts/2019/07/21/kingofkengs.html" class="post-link" data-v-4e23451f>
+      prevNote : 宇智波带坑
+    </a> <a href="/uNoteWhat/posts/2019/07/21/kengsofflutter.html" class="post-link" data-v-4e23451f>
+      nextNote : Flutter
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="what-is-oauth-2-0"><a href="#what-is-oauth-2-0" class="header-anchor">#</a> What is OAuth 2.0?</h1> <p>Most applications have the concept of a user. To prevent just anyone from saying they are this user, the user has a password. When a user wants to use your application, they send their username and password to the server so it can ensure they are who they say they are.</p> <p>The simple way to do this is to send the username and password in an Authorization header for every request. Two reasons this is bad: first, every time the user wants to do something, their password is sent in every request and that can be unsafe. Second, any application that wants to keep the user logged in has to store that password - and that is unsafe.</p> <p>In OAuth 2.0, the user gives their username and password to a client application once. The application sends those credentials to a server, and the server gives the application back an access token. A access token is a long, random string that no one can guess. When the user wants to do more stuff, the application sends the token with every request, instead of the user's password. The server checks the token, makes sure its not expired, and then lets the application's request go through. The application doesn't have to store the password and doesn't have to ask the user for their password again.</p> <p>This credential-for-token exchange happens by sending a POST request to some endpoint, where the username and password are sent in the request body. Typically, an Aqueduct application's route for this is /auth/token and handled by an instance of AuthController.</p> <p>OAuth 2.0 makes a subtle distinction: a user and the application they are using are not the same thing. It's intuitive to think of a user as &quot;making a request to the server&quot;, but in reality, the user makes a request to an application and the application makes the request to the server. The server grants the application access on behalf of the user. In other words, when a user enters their credentials into an application, the application goes to the server and says &quot;Hey, this user said I can do stuff for them. Look, this is their secret password!&quot;</p> <p>This is an important distinction, because an OAuth 2.0 server doesn't just verify users: it also verifies applications. An application has a identifier that has been registered with the server. So, for an ecosystem that has a web client, an Android and an iOS app there would likely be three identifiers - one for each. The client application usually stores that identifier in a database. This identifier is called a client identifier. Client identifiers are added to Aqueduct applications with the aqueduct auth tool (see Aqueduct Auth CLI).</p> <p>When the user is logging in through an application, they submit their username and password. The user doesn't provide the client identifier - in fact, the user doesn't know it. The application sends a request with the user's username and password in the request body, and the client identifier in the Authorization header. All three have to check out for the server to give the application back a token. The full request in pseudo-code looks something like:</p> <p>var request = HTTPRequest(&quot;/auth/token&quot;);
+request.method = &quot;POST&quot;;
+request.contentType = &quot;application/x-www-form-urlencoded&quot;;
+request.authorization = Base64.encode(&quot;$clientID:&quot;);
+request.body = {
+&quot;username&quot; : &quot;bob@stablekernel.com&quot;,
+&quot;password&quot; : &quot;supersecretstuff&quot;,
+&quot;grant_type&quot; : &quot;password&quot;
+};
+An access token can expire. How long it takes to expire is up to the server - Aqueduct defaults to 24 hours. At first glance, this means that the application would have to ask the user for a password again. But, tokens can also be refreshed. Refreshing a token grants a brand new access token, but without having to ask for the password. This is possible because an access token comes with a refresh token. The refresh token is another long, random string. So, the JSON the server sends back when granting a token looks like this:</p> <p>{
+&quot;access_token&quot; : &quot;Abca09zzzza2o2kelmzlli3ijlka&quot;,
+&quot;token_type&quot; : &quot;bearer&quot;,
+&quot;refresh_token&quot; : &quot;lkmLIAmooa898nm20jannnnnxaww&quot;,
+&quot;expire_in&quot; : 3600
+}
+The application hangs on to both an access token and a refresh token. When the token expires, it will send the refresh token back to the server to get a replacement access token. This is done through the same route that the access token came from - /auth/token - except the parameters are a bit different:</p> <p>var request = HTTPRequest(&quot;/auth/token&quot;);
+request.method = &quot;POST&quot;;
+request.contentType = &quot;application/x-www-form-urlencoded&quot;;
+request.authorization = Base64.encode(&quot;$clientID:&quot;);
+request.body = {
+&quot;refresh_token&quot; : &quot;lkmLIAmooa898nm20jannnnnxaww&quot;,
+&quot;grant_type&quot; : &quot;refresh_token&quot;
+};
+Exchanging a refresh token has the same response as the initial exchange for username and password - except a few values will have changed.</p> <p>The verification and storage of authorization and authentication information is managed by an AuthServer.</p> <p>Other Methods for Obtaining Authorization
+The method of getting a token above - sending a username and password to /auth/token - is just one of four possible methods OAuth 2.0 uses to authenticate a user. This particular one is called the resource owner password credentials grant. A resource owner is a fancy word for a 'user'. We can shorten it up to just the 'password flow'. It's probably the most common flow - mobiles applications and front-end web applications often use this flow. When you enter your credentials, the client application sends them directly to the server.</p> <p>The other commonly used flow prevents the client application from ever seeing the user's credentials. For example, you might sign into Pivotal Tracker with your Google account. Your account on Pivotal Tracker doesn't have a password. Instead, it is linked to your Google account - which does. Pivotal Tracker never sees your Google password. When you login to Pivotal Tracker in this way, it takes you to Google's authentication page - owned and operated by Google. When you login successfully, Google gives Pivotal Tracker your token. Pivotal Tracker is now an application that can do things on your behalf.</p> <p>This is called the authorization code grant - or just 'auth code flow'. An instance of AuthCodeController handles granting authorization codes. Once a code is received, it can be exchanged for a token via an AuthController.</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      createdAt : 2019-07-21
+    </span> <span class="update-date" data-v-4e23451f>
+      updatedAt : 2019-08-06
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/uNoteWhat/posts/2019/07/21/kingofkengs.html" class="post-link" data-v-4e23451f>
+      prevNote : 宇智波带坑
+    </a> <a href="/uNoteWhat/posts/2019/07/21/kengsofflutter.html" class="post-link" data-v-4e23451f>
+      nextNote : Flutter
+    </a></section></section> <!----></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/uNoteWhat/img/avatar.jpeg" alt="PrintF" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      PrintF
+    </section> <section class="info-desc" data-v-9d847660>Two Hours a day, Keeps Foolish Away</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="Melbourne, AU" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Melbourne, AU</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          Melbourne, AU
+        </span></span></section> <!----> <section data-v-9d847660><a href="mailto:yuechaor@gmail.com" title="yuechaor@gmail.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>yuechaor@gmail.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          yuechaor@gmail.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/yuechaor" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: yuechaor" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: yuechaor</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <!----></aside></div> <footer class="footer" data-v-17465a0e><p class="footer-sns-links" data-v-17465a0e><a href="https://github.com/yuechaor" target="_blank" class="sns-link" data-v-17465a0e><span title="GitHub: yuechaor" class="sns-icon" data-v-17465a0e data-v-17465a0e><svg class="icon" style="font-size:25px;" data-v-17465a0e data-v-17465a0e><title data-v-17465a0e data-v-17465a0e>GitHub: yuechaor</title><use xlink:href="#icon-github" data-v-17465a0e data-v-17465a0e></use></svg></span></a></p> <p class="footer-text" data-v-17465a0e><span data-v-17465a0e>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-17465a0e>
+      VuePress
+    </a></p> <!----></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/uNoteWhat/assets/js/app.58bd65f3.js" defer></script><script src="/uNoteWhat/assets/js/6.9f100392.js" defer></script><script src="/uNoteWhat/assets/js/15.92f21756.js" defer></script>
+  </body>
+</html>
