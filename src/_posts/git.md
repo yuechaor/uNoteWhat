@@ -256,3 +256,19 @@ github官网上有针对不同编程语言所需要的.gitignore的编写。
 ## 智能协议
 
 > git clone --bare file:///Users/RYC/Desktop/vuepressBlog/my-blog/.git zhineng.git
+
+
+
+# github 
+
+## 配置公私钥
+
+首先查看是否有公私钥
+> cd ~/.ssh
+> ls -al
+如果有的话是可以看到的。
+
+如果没有，需要生成新的公私钥,使用下面link：
+
+[Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
